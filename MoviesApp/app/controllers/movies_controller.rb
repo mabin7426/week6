@@ -27,7 +27,11 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    sort_direction = params["sortby"]
+    if sort_direction == nil
+      sort_direction = "asc"
+    end
+    @movies = Movie.order("title #{sort_direction}").limit(100)
   end
 
   def show

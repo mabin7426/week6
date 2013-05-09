@@ -1,5 +1,22 @@
 MoviesApp::Application.routes.draw do
 
+  # Routes for the Showtime resource:
+  # CREATE
+  get '/showtimes/new', controller: 'showtimes', action: 'new', as: 'new_showtime'
+  post '/showtimes', controller: 'showtimes', action: 'create'
+
+  # READ
+  get '/showtimes', controller: 'showtimes', action: 'index', as: 'showtimes'
+  get '/showtimes/:id', controller: 'showtimes', action: 'show', as: 'showtime'
+
+  # UPDATE
+  get '/showtimes/:id/edit', controller: 'showtimes', action: 'edit', as: 'edit_showtime'
+  put '/showtimes/:id', controller: 'showtimes', action: 'update'
+
+  # DELETE
+  delete '/showtimes/:id', controller: 'showtimes', action: 'destroy'
+  #------------------------------
+
   # Route for our home page.
 
   get '/', controller: 'movies', action: 'index'

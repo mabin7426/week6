@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Movie</th>
       <th>Summary</th>
       <th>Rating</th>
       <th></th>
@@ -16,9 +17,16 @@
   <tbody>
   <% @reviews.each do |review| %>
     <tr>
+      <% m = Movie.find_by_id(review.movie_id) %>
+
+      <td>
+        <% if m.present? %>
+          <%= m.title %>
+        <% end %>
+      </td>
       <td><%= review.summary %></td>
       <td><%= review.rating %></td>
-  
+
       <td><%= link_to 'Show', review_url(review) %></td>
       <td><%= link_to 'Edit', edit_review_url(review) %></td>
       <td><%= link_to 'Destroy', review_url(review), method: 'delete', data: { confirm: "Do you really want to delete this review?" } %></td>

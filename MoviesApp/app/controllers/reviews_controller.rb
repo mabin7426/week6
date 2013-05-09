@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @review.summary = params[:summary]
     @review.rating = params[:rating]
-    
+    @review.movie_id = params[:movie_id]
     if @review.save
       redirect_to reviews_url
     else
@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
     @review = Review.find_by_id(params[:id])
     @review.summary = params[:summary]
     @review.rating = params[:rating]
-    
+
     if @review.save
       redirect_to reviews_url
     else
