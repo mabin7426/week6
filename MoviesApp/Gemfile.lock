@@ -1,3 +1,8 @@
+PATH
+  remote: ~/projects/starter_generators
+  specs:
+    starter_generators (0.5.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -109,4 +114,5 @@ DEPENDENCIES
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   sqlite3
+  starter_generators!
   uglifier (>= 1.0.3)
