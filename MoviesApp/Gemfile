@@ -4,7 +4,7 @@ gem 'rails', '3.2.13'
 
 group :development, :test do
   gem 'sqlite3'
-  gem "starter_generators", :path => "~/projects/starter_generators"
+  gem "starter_generators", "0.5.2"
   # gem 'quiet_assets'
 end
 
